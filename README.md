@@ -1,6 +1,6 @@
 # Keras-real-time-age-gender-estimation-demo
 I use the following code to train the keras model
-https://github.com/yu4u/age-gender-estimation
+https://github.com/yu4u/age-gender-estimation (very great github)
 
 Unlike the demo.py in the original github, I made several adjustments for the demo.
 --
@@ -45,6 +45,10 @@ I have tried skvideo.io and pyav and something else...
 
 Using anaconda to install moviepy is the best option for python3.5 with opencv3.1 or opencv3.2.
 --
+```
+conda install -c conda-forge moviepy 
+```
+
 ## How to run?
 1. Put you video into the folder
 
@@ -58,3 +62,7 @@ KERAS_BACKEND=tensorflow python3 TYY_demo.py
 ```
 KERAS_BACKEND=tensorflow CUDA_VISIBLE_DEVICES='' python3 TYY_demo.py
 ```
+
+## Dependencies
+1. Same as https://github.com/yu4u/age-gender-estimation
+2. moviepy
