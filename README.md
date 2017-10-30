@@ -2,6 +2,9 @@
 I use the following code to train the keras model
 https://github.com/yu4u/age-gender-estimation
 
+Unlike the demo.py in the original github
+,I made several adjustments for the demo.
+
 ## Small model
 
 TYY_1stream:
@@ -36,12 +39,11 @@ Change the video name of the code for your demo
 clip = VideoFileClip('mewtwo.mp4') # can be gif or movie
 ```
 
-Unlike the demo.py in https://github.com/yu4u/age-gender-estimation
-,I made several adjustment for the demo.
-
-
-There are a lot of issue of using cv2.VideoCapture()
+There are a lot of issues of using cv2.VideoCapture()
 https://github.com/ContinuumIO/anaconda-issues/issues/121
+
+I have tried skvideo.io and pyav and something else...
+Using anaconda to install moviepy is the best option for python3.5 and opencv3.1 or opencv3.2.
 
 ## How to run?
 ```
