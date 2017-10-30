@@ -4,7 +4,7 @@ https://github.com/yu4u/age-gender-estimation (a very great github post)
 
 Unlike the demo.py in the original github, I made several adjustments for the demo.
 --
-## Small model
+## 1. Small model
 
 TYY_1stream:
 ```
@@ -31,7 +31,7 @@ TYY_1stream:
 ```
 
 
-## Demo (Use [[moviepy]] instead of [[cv2]] for the frame of the video!!!)
+## 2. Demo (Use [[moviepy]] instead of [[cv2]] for the frame of the video!!!)
 
 Change the video name of the code for your demo
 ```
@@ -51,7 +51,7 @@ I have tried skvideo.io and pyav and something else...
 conda install -c conda-forge moviepy 
 ```
 
-## How to run?
+## 3. How to run?
 1. Put you video into the folder
 
 2. Change the name of the video inside TYY_demo.py
@@ -65,9 +65,9 @@ KERAS_BACKEND=tensorflow python3 TYY_demo.py
 KERAS_BACKEND=tensorflow CUDA_VISIBLE_DEVICES='' python3 TYY_demo.py
 ```
 
-## Dependencies
+## 4. Dependencies
 1. Same as https://github.com/yu4u/age-gender-estimation
 2. moviepy
 
-## Dependencies install guide (in Chinese)
+## 5. Dependencies install guide (in Chinese)
 http://shamangary.logdown.com/posts/3009851
