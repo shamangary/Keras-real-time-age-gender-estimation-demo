@@ -43,3 +43,11 @@ Unlike the demo.py in https://github.com/yu4u/age-gender-estimation
 There are a lot of issue of using cv2.VideoCapture()
 https://github.com/ContinuumIO/anaconda-issues/issues/121
 
+## How to run?
+```
+#GPU with tensorflow backend
+KERAS_BACKEND=tensorflow python3 TYY_demo.py
+
+#CPU with tensorflow backend
+KERAS_BACKEND=tensorflow CUDA_VISIBLE_DEVICES='' python3 TYY_demo.py
+```
