@@ -38,8 +38,7 @@ clip = VideoFileClip('mewtwo.mp4') # can be gif or movie
 
 Unlike the demo.py in https://github.com/yu4u/age-gender-estimation
 ,I made several adjustment for the demo.
-
-***Use [[moviepy]] instead of [[cv2]] for the frame of the video!!!***
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `***Use [[moviepy]] instead of [[cv2]] for the frame of the video!!!***`
 
 There are a lot of issue of using cv2.VideoCapture()
 https://github.com/ContinuumIO/anaconda-issues/issues/121
