@@ -2,8 +2,7 @@
 I use the following code to train the keras model
 https://github.com/yu4u/age-gender-estimation
 
-Unlike the demo.py in the original github
-,I made several adjustments for the demo.
+Unlike the demo.py in the original github, I made several adjustments for the demo.
 --
 ## Small model
 
@@ -31,7 +30,7 @@ TYY_1stream:
         model = Model(inputs=inputs, outputs=[predictions_g, predictions_a])
 ```
 
---
+
 ## Demo (Use [[moviepy]] instead of [[cv2]] for the frame of the video!!!)
 
 Change the video name of the code for your demo
@@ -44,13 +43,18 @@ https://github.com/ContinuumIO/anaconda-issues/issues/121
 
 I have tried skvideo.io and pyav and something else...
 
-Using anaconda to install moviepy is the best option for python3.5 and opencv3.1 or opencv3.2.
+Using anaconda to install moviepy is the best option for python3.5 with opencv3.1 or opencv3.2.
 --
 ## How to run?
-```
-#GPU with tensorflow backend
-KERAS_BACKEND=tensorflow python3 TYY_demo.py
+1. Put you video into the folder
 
-#CPU with tensorflow backend
+2. Change the name of the video inside TYY_demo.py
+
+3. GPU with tensorflow backend
+```
+KERAS_BACKEND=tensorflow python3 TYY_demo.py
+```
+4. CPU with tensorflow backend
+```
 KERAS_BACKEND=tensorflow CUDA_VISIBLE_DEVICES='' python3 TYY_demo.py
 ```
