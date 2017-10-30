@@ -43,7 +43,7 @@ https://github.com/ContinuumIO/anaconda-issues/issues/121
 
 I have tried skvideo.io and pyav and something else...
 
-Using anaconda to install moviepy is the best option for python3.5 with opencv3.1 or opencv3.2.
+[Replacement of cv2.VideoCapture] Using anaconda to install moviepy is the best option for python3.5 with opencv3.1 or opencv3.2.
 --
 ```
 conda install -c conda-forge moviepy 
