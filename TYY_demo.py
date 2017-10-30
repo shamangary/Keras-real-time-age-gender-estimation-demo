@@ -27,14 +27,8 @@ def draw_label(image, point, label, font=cv2.FONT_HERSHEY_SIMPLEX,
 
 
 def main():
-    args = get_args()
-    depth = args.depth
-    k = args.width
-    weight_file = args.weight_file
-
-    if not weight_file:
-        #weight_file = os.path.join("pretrained_models", "weights.18-4.06.hdf5")
-        weight_file = os.path.join("models", "TYY_1stream.h5")
+    
+    weight_file = os.path.join("models", "TYY_1stream.h5")
 
     # for face detection
     detector = dlib.get_frontal_face_detector()
