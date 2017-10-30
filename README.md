@@ -66,3 +66,6 @@ KERAS_BACKEND=tensorflow CUDA_VISIBLE_DEVICES='' python3 TYY_demo.py
 ## Dependencies
 1. Same as https://github.com/yu4u/age-gender-estimation
 2. moviepy
+
+## Dependencies install guide (in Chinese)
+http://shamangary.logdown.com/posts/3009851
