@@ -1,6 +1,6 @@
 # Keras-real-time-age-gender-estimation-demo
 I use the following code to train the keras model
-https://github.com/yu4u/age-gender-estimation (very great github)
+https://github.com/yu4u/age-gender-estimation (a very great github post)
 
 Unlike the demo.py in the original github, I made several adjustments for the demo.
 --
