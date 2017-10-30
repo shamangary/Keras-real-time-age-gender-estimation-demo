@@ -31,7 +31,7 @@ TYY_1stream:
 ```
 
 
-## 2. Demo (Use [[moviepy]] instead of [[cv2]] for the frame of the video!!!)
+## 2. Demo (Use "moviepy" instead of "cv2" for the frame of the video!!!)
 
 Change the video name of the code for your demo
 ```
