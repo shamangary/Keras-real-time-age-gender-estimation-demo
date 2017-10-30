@@ -4,7 +4,7 @@ https://github.com/yu4u/age-gender-estimation
 
 Unlike the demo.py in the original github
 ,I made several adjustments for the demo.
-
+--
 ## Small model
 
 TYY_1stream:
@@ -31,7 +31,7 @@ TYY_1stream:
         model = Model(inputs=inputs, outputs=[predictions_g, predictions_a])
 ```
 
-
+--
 ## Demo (Use [[moviepy]] instead of [[cv2]] for the frame of the video!!!)
 
 Change the video name of the code for your demo
@@ -43,8 +43,9 @@ There are a lot of issues of using cv2.VideoCapture()
 https://github.com/ContinuumIO/anaconda-issues/issues/121
 
 I have tried skvideo.io and pyav and something else...
-Using anaconda to install moviepy is the best option for python3.5 and opencv3.1 or opencv3.2.
 
+Using anaconda to install moviepy is the best option for python3.5 and opencv3.1 or opencv3.2.
+--
 ## How to run?
 ```
 #GPU with tensorflow backend
