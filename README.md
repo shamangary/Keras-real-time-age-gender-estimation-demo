@@ -41,6 +41,8 @@ clip = VideoFileClip('mewtwo.mp4') # can be gif or movie
 There are a lot of issues of using cv2.VideoCapture()
 https://github.com/ContinuumIO/anaconda-issues/issues/121
 
+**Anaconda will not install opencv3 with ffmpeg properly!**
+
 I have tried skvideo.io and pyav and something else...
 
 [Replacement for cv2.VideoCapture] Using anaconda to install moviepy is the best option for python3.5 with opencv3.1 or opencv3.2.
