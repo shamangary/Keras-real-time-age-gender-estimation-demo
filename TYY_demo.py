@@ -10,15 +10,10 @@ import timeit
 from moviepy.editor import VideoFileClip
 
 def get_args():
-    parser = argparse.ArgumentParser(description="This script detects faces from web cam input, "
+    parser = argparse.ArgumentParser(description="This script detects faces from video, "
                                                  "and estimates age and gender for the detected faces.",
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument("--weight_file", type=str, default=None,
-                        help="path to weight file (e.g. weights.18-4.06.hdf5)")
-    parser.add_argument("--depth", type=int, default=16,
-                        help="depth of network")
-    parser.add_argument("--width", type=int, default=8,
-                        help="width of network")
+    
     args = parser.parse_args()
     return args
 
