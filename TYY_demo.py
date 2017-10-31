@@ -3,6 +3,7 @@ import cv2
 import dlib
 import numpy as np
 import argparse
+#from wide_resnet import WideResNet
 from TYY_model import TYY_2stream,TYY_1stream
 import sys
 import timeit
@@ -46,7 +47,7 @@ def main():
     time_detection = 0
     time_network = 0
     time_plot = 0
-    skip_frame = 1 # every 5 frame do 1 detection and network forward propagation
+    skip_frame = 5 # every 5 frame do 1 detection and network forward propagation
     for img in clip.iter_frames():
         img_idx = img_idx + 1
         
@@ -54,7 +55,7 @@ def main():
         input_img = img #using python2.7 with moivepy to show th image without channel flip
         
         if pyFlag == '3':
-            input_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) #using cv2.imshow() requires channel flip
+            input_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         
         img_h, img_w, _ = np.shape(input_img)
 
@@ -125,11 +126,15 @@ def main():
                 label = "{}~{}, {}".format(int(predicted_ages[i]*4.54),int((predicted_ages[i]+1)*4.54),
                                         "F" if predicted_genders[i][0] > 0.5 else "M")
                 draw_label(input_img, (d.left(), d.top()), label)
+            
+            start_time = timeit.default_timer()
             if pyFlag == '2':
                 img_clip = ImageClip(input_img)
                 img_clip.show()
             elif pyFlag == '3':
                 cv2.imshow("result", input_img)
+            elapsed_time = timeit.default_timer()-start_time
+            time_plot = time_plot + elapsed_time
         
         #Show the time cost (fps)
         print('avefps_time_detection:',img_idx/time_detection)
@@ -138,7 +143,6 @@ def main():
         print('===============================')
         if pyFlag == '3':
             key = cv2.waitKey(30)
-
             if key == 27:
                 break
 
