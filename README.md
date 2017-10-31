@@ -2,7 +2,7 @@
 I use the following code to train the keras model
 https://github.com/yu4u/age-gender-estimation (a very great github post)
 
-Unlike the demo.py in the original github, I made several adjustments for the demo.
+Unlike the demo.py in the original github, I made several adjustments for the demo. The demo now supports python2.7 an python3.5.
 --
 ## 1. Small model
 
@@ -75,6 +75,7 @@ KERAS_BACKEND=tensorflow CUDA_VISIBLE_DEVICES='' python3 TYY_demo.py mewtwo.mp4 
 ## 4. Dependencies
 1. Same as https://github.com/yu4u/age-gender-estimation
 2. moviepy
+3. pygame
 
 ## 5. Dependencies install guide (in Chinese)
 http://shamangary.logdown.com/posts/3009851
