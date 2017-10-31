@@ -9,14 +9,6 @@ import sys
 import timeit
 from moviepy.editor import VideoFileClip
 
-def get_args():
-    parser = argparse.ArgumentParser(description="This script detects faces from video, "
-                                                 "and estimates age and gender for the detected faces.",
-                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    
-    args = parser.parse_args()
-    return args
-
 
 def draw_label(image, point, label, font=cv2.FONT_HERSHEY_SIMPLEX,
                font_scale=1, thickness=2):
@@ -35,26 +27,24 @@ def main():
 
     # load model and weights
     img_size = 64
-    #model = WideResNet(img_size, depth=depth, k=k)()
     model = TYY_1stream(img_size)()
     model.load_weights(weight_file)
 
-    clip = VideoFileClip('mewtwo.mp4') # can be gif or movie
+    clip = VideoFileClip(sys.argv[1]) # can be gif or movie
 
     img_idx = 0
     detected = '' #make this not local variable
     time_detection = 0
     time_network = 0
     time_plot = 0
-    #scale = 0.7 #scaling the input image
+    skip_frame = 5 # every 5 frame do 1 detection and network forward propagation
     for img in clip.iter_frames():
         img_idx = img_idx + 1
         input_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        #input_img = cv2.resize(input_img,None,fx=scale,fy=scale,interpolation=cv2.INTER_CUBIC)
         img_h, img_w, _ = np.shape(input_img)
 
         
-        if img_idx==1 or img_idx%1 == 0:
+        if img_idx==1 or img_idx%skip_frame == 0:
             
             # detect faces using dlib detector
             detected = detector(input_img, 1)
@@ -90,7 +80,6 @@ def main():
             time_network = time_network + elapsed_time
             
             
-            #input_img = cv2.resize(input_img,None,fx=1/scale,fy=1/scale,interpolation=cv2.INTER_CUBIC)
             
             start_time = timeit.default_timer()
             cv2.imshow("result", input_img)
@@ -111,10 +100,9 @@ def main():
 
             # draw results
             for i, d in enumerate(detected):
-                label = "{}~{}, {}".format(int((predicted_ages[i]-1)*4.7),int(predicted_ages[i]*4.7),
+                label = "{}~{}, {}".format(int(predicted_ages[i]*4.54),int((predicted_ages[i]+1)*4.54),
                                         "F" if predicted_genders[i][0] > 0.5 else "M")
                 draw_label(input_img, (d.left(), d.top()), label)
-            #input_img = cv2.resize(input_img,None,fx=1/scale,fy=1/scale,interpolation=cv2.INTER_CUBIC)
             cv2.imshow("result", input_img)
         
         #Show the time cost (fps)
