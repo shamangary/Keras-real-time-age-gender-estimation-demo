@@ -43,8 +43,10 @@ I have tried skvideo.io and pyav and something else...
 [Replacement for cv2.VideoCapture] Using anaconda to install moviepy is the best option for python3.5 with opencv3.1 or opencv3.2.
 --
 ```
-conda install -c conda-forge moviepy 
+conda install -c conda-forge moviepy
+conda install -c cogsci pygame
 ```
+pygame is for showing the image with moviepy.
 
 ## 3. How to run?
 1. Put you video into the folder
@@ -57,6 +59,15 @@ KERAS_BACKEND=tensorflow python3 TYY_demo.py mewtwo.mp4
 ```
 KERAS_BACKEND=tensorflow CUDA_VISIBLE_DEVICES='' python3 TYY_demo.py mewtwo.mp4
 ```
+4.CPU with tensorflow backend with python2.7 or python3.5
+```
+KERAS_BACKEND=tensorflow CUDA_VISIBLE_DEVICES='' python3 TYY_demo.py mewtwo.mp4 '2'
+```
+5.CPU with tensorflow backend with python3.5 (using cv2.imshow())
+```
+KERAS_BACKEND=tensorflow CUDA_VISIBLE_DEVICES='' python3 TYY_demo.py mewtwo.mp4 '3'
+```
+
 
 ## 4. Dependencies
 1. Same as https://github.com/yu4u/age-gender-estimation
