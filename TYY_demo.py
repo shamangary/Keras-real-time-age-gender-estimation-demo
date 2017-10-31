@@ -7,7 +7,7 @@ import argparse
 from TYY_model import TYY_2stream,TYY_1stream
 import sys
 import timeit
-from moviepy.editor import VideoFileClip
+from moviepy.editor import *
 
 
 def draw_label(image, point, label, font=cv2.FONT_HERSHEY_SIMPLEX,
@@ -31,16 +31,32 @@ def main():
     model.load_weights(weight_file)
 
     clip = VideoFileClip(sys.argv[1]) # can be gif or movie
+    
+    #python version
+    pyFlag = ''
+    if len(sys.argv)<3 :
+        pyFlag = '2' #defaut to use moviepy to show, this can work on python2.7 and python3.5
+    elif len(sys.argv)==3:
+        pyFlag = sys.argv[2] #python version
+    else:
+        print('Wrong input!')
+        sys.exit()
 
     img_idx = 0
     detected = '' #make this not local variable
     time_detection = 0
     time_network = 0
     time_plot = 0
-    skip_frame = 5 # every 5 frame do 1 detection and network forward propagation
+    skip_frame = 1 # every 5 frame do 1 detection and network forward propagation
     for img in clip.iter_frames():
         img_idx = img_idx + 1
-        input_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        
+        
+        input_img = img #using python2.7 with moivepy to show th image without channel flip
+        
+        if pyFlag == '3':
+            input_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        
         img_h, img_w, _ = np.shape(input_img)
 
         
@@ -82,7 +98,14 @@ def main():
             
             
             start_time = timeit.default_timer()
-            cv2.imshow("result", input_img)
+
+            if pyFlag == '2':
+                img_clip = ImageClip(input_img)
+                img_clip.show()
+            elif pyFlag == '3':
+                cv2.imshow("result", input_img)
+                
+            
             elapsed_time = timeit.default_timer()-start_time
             time_plot = time_plot + elapsed_time
             
@@ -103,17 +126,22 @@ def main():
                 label = "{}~{}, {}".format(int(predicted_ages[i]*4.54),int((predicted_ages[i]+1)*4.54),
                                         "F" if predicted_genders[i][0] > 0.5 else "M")
                 draw_label(input_img, (d.left(), d.top()), label)
-            cv2.imshow("result", input_img)
+            if pyFlag == '2':
+                img_clip = ImageClip(input_img)
+                img_clip.show()
+            elif pyFlag == '3':
+                cv2.imshow("result", input_img)
         
         #Show the time cost (fps)
         print('avefps_time_detection:',img_idx/time_detection)
         print('avefps_time_network:',img_idx/time_network)
         print('avefps_time_plot:',img_idx/time_plot)
         print('===============================')
-        key = cv2.waitKey(30)
+        if pyFlag == '3':
+            key = cv2.waitKey(30)
 
-        if key == 27:
-            break
+            if key == 27:
+                break
 
 
 if __name__ == '__main__':
