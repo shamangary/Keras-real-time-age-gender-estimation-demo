@@ -3,7 +3,6 @@ import cv2
 import dlib
 import numpy as np
 import argparse
-#from wide_resnet import WideResNet
 from TYY_model import TYY_2stream,TYY_1stream
 import sys
 import timeit
@@ -55,7 +54,7 @@ def main():
         input_img = img #using python2.7 with moivepy to show th image without channel flip
         
         if pyFlag == '3':
-            input_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            input_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) #using cv2.imshow() requires channel flip
         
         img_h, img_w, _ = np.shape(input_img)
 
