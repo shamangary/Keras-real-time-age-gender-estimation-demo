@@ -2,7 +2,7 @@
 I use the following code to train the keras model
 https://github.com/yu4u/age-gender-estimation (a very great github post)
 
-Unlike the demo.py in the original github, I made several adjustments for the demo. The demo now supports python2.7 an python3.5.
+Unlike the demo.py in the original github, I made several adjustments for the demo. The demo now supports both python2.7 and python3.5.
 --
 ## 1. Small model
 
