@@ -33,11 +33,6 @@ TYY_1stream:
 
 ## 2. Demo (Use "moviepy" instead of "cv2" for the frame of the video!!!)
 
-Change the video name of the code for your demo
-```
-clip = VideoFileClip('mewtwo.mp4') # can be gif or movie
-```
-
 There are a lot of issues of using cv2.VideoCapture()
 https://github.com/ContinuumIO/anaconda-issues/issues/121
 
@@ -54,15 +49,13 @@ conda install -c conda-forge moviepy
 ## 3. How to run?
 1. Put you video into the folder
 
-2. Change the name of the video inside TYY_demo.py
-
-3. GPU with tensorflow backend
+2. GPU with tensorflow backend (video name is the last term)
 ```
-KERAS_BACKEND=tensorflow python3 TYY_demo.py
+KERAS_BACKEND=tensorflow python3 TYY_demo.py mewtwo.mp4
 ```
-4. CPU with tensorflow backend
+3. CPU with tensorflow backend (video name is the last term)
 ```
-KERAS_BACKEND=tensorflow CUDA_VISIBLE_DEVICES='' python3 TYY_demo.py
+KERAS_BACKEND=tensorflow CUDA_VISIBLE_DEVICES='' python3 TYY_demo.py mewtwo.mp4
 ```
 
 ## 4. Dependencies
