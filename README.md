@@ -62,7 +62,7 @@ KERAS_BACKEND=tensorflow CUDA_VISIBLE_DEVICES='' python3 TYY_demo.py mewtwo.mp4
 ### Python version for different display options
 Since there are some problems in python2.7 for using cv2.imshow(), I set an option for python version choices. 
 
-4. CPU with tensorflow backend with python2.7 or python3.5
+4. CPU with tensorflow backend with python2.7 or python3.5 (using img_clip.show())
 ```
 KERAS_BACKEND=tensorflow CUDA_VISIBLE_DEVICES='' python3 TYY_demo.py mewtwo.mp4 '2'
 ```
