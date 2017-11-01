@@ -35,7 +35,7 @@ def main():
     #python version
     pyFlag = ''
     if len(sys.argv)<3 :
-        pyFlag = '2' #defaut to use moviepy to show, this can work on python2.7 and python3.5
+        pyFlag = '2' #default to use moviepy to show, this can work on python2.7 and python3.5
     elif len(sys.argv)==3:
         pyFlag = sys.argv[2] #python version
     else:
