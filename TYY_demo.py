@@ -89,7 +89,7 @@ def main():
 
             # draw results
             for i, d in enumerate(detected):
-                label = "{}~{}, {}".format(int((predicted_ages[i]-1)*5),int(predicted_ages[i]*5),
+                label = "{}~{}, {}".format(int(predicted_ages[i]*4.76),int((predicted_ages[i]+1)*4.76),
                                         "F" if predicted_genders[i][0] > 0.5 else "M")
                 draw_label(input_img, (d.left(), d.top()), label)
             elapsed_time = timeit.default_timer()-start_time
@@ -123,7 +123,7 @@ def main():
 
             # draw results
             for i, d in enumerate(detected):
-                label = "{}~{}, {}".format(int(predicted_ages[i]*4.54),int((predicted_ages[i]+1)*4.54),
+                label = "{}~{}, {}".format(int(predicted_ages[i]*4.76),int((predicted_ages[i]+1)*4.76),
                                         "F" if predicted_genders[i][0] > 0.5 else "M")
                 draw_label(input_img, (d.left(), d.top()), label)
             
