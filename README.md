@@ -2,7 +2,7 @@
 I use the following code to train the keras model
 https://github.com/yu4u/age-gender-estimation (a very great github post)
 
-(2017/12/20 update):Plz use https://github.com/shamangary/Keras-MORPH2-age-estimation to train the model. The performance of small model work much better by using regression than DEX.
+## (2017/12/20 update):Plz use https://github.com/shamangary/Keras-MORPH2-age-estimation to train the model. The performance of small model work much better by using regression than DEX.
 
 
 Unlike the demo.py in the original github, I made several adjustments for the demo. The demo now supports both python2.7 and python3.5.
