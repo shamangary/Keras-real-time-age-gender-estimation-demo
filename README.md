@@ -1,5 +1,7 @@
 # Keras-real-time-age-gender-estimation-demo
 
+## (2018/04/30 update): The demo has been combined with our latest IJCAI18 paper SSR-Net https://github.com/shamangary/SSR-Net. Plz check it out!!!
+
 ## (2017/12/20 update):Plz use https://github.com/shamangary/Keras-MORPH2-age-estimation to train the model. The performance of small model work much better by using regression than DEX.
 
 I use the following code to train the keras model
